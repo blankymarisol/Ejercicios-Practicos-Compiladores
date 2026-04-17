@@ -53,6 +53,7 @@
     ></textarea>
   </div>
 
+  <!-- TOKENS -->
   <div class="results-section">
     <div class="section-label label-tokens">
       Tokens detectados
@@ -68,6 +69,7 @@
 
   <div class="divider"></div>
 
+  <!-- ERRORES -->
   <div class="results-section">
     <div class="section-label label-errors">
       Tabla de Errores
@@ -83,6 +85,7 @@
 
   <div class="divider"></div>
 
+  <!-- SÍMBOLOS -->
   <div class="results-section">
     <div class="section-label label-symbols">
       Tabla de Símbolos
@@ -98,16 +101,56 @@
 
   <div class="divider"></div>
 
+  <!-- ESTADÍSTICAS -->
   <div class="results-section">
     <div class="section-label label-stats">Estadísticas</div>
     <div id="statsWrap"></div>
   </div>
 
+  <div class="divider"></div>
+
+  <!-- BNF -->
+  <div class="results-section">
+    <div class="section-label label-symbols">
+      Gramática BNF del lenguaje
+    </div>
+    <pre id="bnfDisplay" style="
+      font-family: var(--f-code, monospace);
+      font-size: .78rem;
+      line-height: 1.7;
+      background: var(--bg2, #1a1a2e);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      padding: 16px 20px;
+      overflow-x: auto;
+      color: var(--tx-soft, #a0a0b0);
+      white-space: pre;
+      margin: 0;
+    "></pre>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ÁRBOL SINTÁCTICO -->
+  <div class="results-section">
+    <div class="section-label label-tokens">
+      Árbol de Derivación (Análisis Sintáctico)
+      <span id="parseInfo" class="section-count"></span>
+    </div>
+    <div id="parseTreeWrap">
+      <div class="empty">
+        <span class="empty-icon">⊙</span>
+        <span>El árbol se generará al analizar...</span>
+      </div>
+    </div>
+  </div>
+
 </div>
 
-<!-- Orden importa: constants → lexer → render → app -->
+<!-- Orden importa: constants → lexer → parser → render → app -->
 <script src="js/constants.js"></script>
 <script src="js/lexer.js"></script>
+<script src="js/parser.js"></script>
 <script src="js/render.js"></script>
 <script src="js/app.js"></script>
 </body>
